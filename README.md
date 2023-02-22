@@ -18,9 +18,9 @@ The exercises/final assignment all have their own subdirectory in this repositor
 ```
 Dataprocessing-Snakemake-Assignments
 ├── .gitignore
-├── environment.yml
 ├── LICENSE
 ├── README.md
+├── environment.yml
 ├── Exercise01
 │   └── *
 ├── Exercise02
@@ -56,7 +56,7 @@ mamba activate base
 ```
 Make sure the working directory is the root of this repository and then simply use the following command to create the environment:
 ```bash
-mamba env create --file environment.yml
+mamba env create
 ```
 This will name the environment `dataprocessing`, if desired it can be given another name by adding `--name your-desired-name`.
 
@@ -69,7 +69,7 @@ mamba activate dataprocessing
 ```
 After the environment is activated the pipeline can normally be run by simply invoking snakemake:
 ```bash
-snakemake
+snakemake --cores 1
 ```
 To be sure a pipeline can be run without any other setup and for more information read the readme of that pipeline.
 
