@@ -20,7 +20,7 @@ Exercise01
 │   └── Snakefile
 ├── results
 │   └── *
-└── resources
+└── data
     └── *
 ```
 

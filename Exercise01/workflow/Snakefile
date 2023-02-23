@@ -6,9 +6,9 @@ rule all:
 
 rule quantify_genes:
     input:
-        genome = "resources/genome.fa",
-        r1 = "resources/{sample}.R1.fastq.gz",
-        r2 = "resources/{sample}.R2.fastq.gz"
+        genome = "data/genome.fa",
+        r1 = "data/{sample}.R1.fastq.gz",
+        r2 = "data/{sample}.R2.fastq.gz"
     output:
         "results/{sample}.txt"
     shell:
