@@ -2,9 +2,10 @@ name: dataprocessing
 channels:
   - conda-forge
   - bioconda
-  - bioconda/osx-64
 dependencies:
-  - python=3.10
-  - snakemake=7.22
+  - bcftools=1.16
   - bwa=0.7
   - graphviz=2.50
+  - python=3.10
+  - samtools=1.16
+  - snakemake=7.22
