@@ -1,0 +1,15 @@
+http-url: "https://bioinf.nl/~fennaf/snakemake/test.txt"
+ncbi-file: "KY785484.1.fasta"
+merge-url: "bioinf.nl/~fennaf/snakemake/WC03/data/"
+
+samples:
+  - A
+  - B
+  - C
+  - D
+  - E
+  - F
+  - G
+  - H
+  - I
+  - J

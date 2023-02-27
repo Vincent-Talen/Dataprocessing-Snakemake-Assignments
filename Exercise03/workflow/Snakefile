@@ -1,0 +1,11 @@
+configfile: "config/config.yaml"
+
+rule all:
+    input:
+        "results/http_test.txt",
+        "results/" + config["ncbi-file"],
+        "results/merged_results.bam"
+
+include: "rules/http.smk"
+include: "rules/ncbi.smk"
+include: "rules/merge.smk"
