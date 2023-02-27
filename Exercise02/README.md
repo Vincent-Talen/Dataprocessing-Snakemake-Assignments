@@ -8,7 +8,7 @@ This exercise is an end-to-end study case about using/creating a simple pipeline
 
 ## Workflow DAG visualisation
 Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of the workflow:  
-![Visualisation of the DAG of Exercise01](dag.png)
+![Visualisation of the DAG of Exercise02](dag.png)
 
 
 ## Pipeline file structure
