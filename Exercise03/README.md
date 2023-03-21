@@ -16,6 +16,8 @@ Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wik
 Exercise03
 ├── config
 │   └── config.yaml
+├── results
+│   └── *
 ├── workflow
 │   ├── rules
 │   │   ├── http.smk
