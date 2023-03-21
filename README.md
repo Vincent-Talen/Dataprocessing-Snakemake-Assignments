@@ -11,16 +11,14 @@ These are supplied in the form of 5 tutorial chapters with an exercise per tutor
 After finishing the tutorial exercises the final assignment needs to be done where an actual pipeline needs to be created. 
 This can be done by converting an already existing pipeline to a *snakemake* pipeline or by creating a pipeline from scratch for an article of choice.
 
-The exercises/final assignment all have their own subdirectory in this repository, they all have a snakemake pipeline structure including an own readme.
+The exercises all have their own subdirectory in this repository, each consisting of a snakemake pipeline with its own readme.
+The final assignment however is not located in this repository, since the chosen project is the one of the minor advanced datamining 
+and is bound by contract, so it can not be publicly shared.
 
 
 ## Repository file structure
 ```
 Dataprocessing-Snakemake-Assignments
-├── .gitignore
-├── LICENSE
-├── README.md
-├── environment.yml
 ├── Exercise01
 │   └── *
 ├── Exercise02
@@ -31,8 +29,10 @@ Dataprocessing-Snakemake-Assignments
 │   └── *
 ├── Exercise05
 │   └── *
-└── Final-Assignment
-    └── *
+├── .gitignore
+├── LICENSE
+├── README.md
+└── environment.yml
 ```
 
 
