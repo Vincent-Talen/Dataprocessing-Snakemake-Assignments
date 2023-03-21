@@ -14,14 +14,14 @@ Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wik
 ## Pipeline file structure
 ```
 Exercise01
-├── dag.png
-├── README.md
-├── workflow
-│   └── Snakefile
+├── data
+│   └── *
 ├── results
 │   └── *
-└── data
-    └── *
+├── workflow
+│   └── Snakefile
+├── README.md
+└── dag.png
 ```
 
 
