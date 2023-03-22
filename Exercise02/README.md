@@ -1,16 +1,18 @@
 # Exercise02
 **[Tutorial Chapter 02: Simple analysing variants pipeline study case](https://fennaf.gitbook.io/bfvh4dsp1/02-simple-analysing-variants-pipeline-study-case/exercise)**
 
-
+------
 ## About this exercise
 This exercise is an end-to-end study case about using/creating a simple pipeline that maps the reads of a sample to a genome.
 
 
+------
 ## Workflow DAG visualisation
 Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of the workflow:  
 ![Visualisation of the DAG of Exercise02](dag.png)
 
 
+------
 ## Pipeline file structure
 ```
 Exercise02
@@ -23,11 +25,18 @@ Exercise02
 ```
 
 
+------
 ## Installation
 Follow general installation instructions from the [README located in the repository root](https://github.com/Vincent-Talen/Dataprocessing-Snakemake-Assignments#installation).
 
 
+------
 ## Usage
+### config.yaml
+Before running all variables in the `config/config.yaml` file should be checked and updated if needed.
+All directories should end with a trailing `/`, since the rules concatenate just the file names.
+
+### Running the pipeline
 To run this workflow/pipeline open a terminal with the working directory as the directory of this exercise.  
 Activate the environment by running the following command (if your environment is named differently replace `dataprocessing` with that name):
 ```bash
@@ -64,5 +73,6 @@ snakemake --forceall --dag | dot -Tpng > dag.png
 ```
 
 
+------
 ## Contact
 For support or any other questions, do not hesitate to contact me at v.k.talen@st.hanze.nl

@@ -1,16 +1,18 @@
 # Exercise01
 **[Tutorial Chapter 01: Introduction](https://fennaf.gitbook.io/bfvh4dsp1/01-introduction/exercise)**
 
-
+------
 ## About this exercise
 Purely testing about how to create a Snakefile and how to run the pipeline using different options/parameters.
 
 
+------
 ## Workflow DAG visualisation
 Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wiki/Directed_acyclic_graph) of the workflow:  
 ![Visualisation of the DAG of Exercise01](dag.png)
 
 
+------
 ## Pipeline file structure
 ```
 Exercise01
@@ -25,10 +27,12 @@ Exercise01
 ```
 
 
+------
 ## Installation
 Follow general installation instructions from the [README located in the repository root](https://github.com/Vincent-Talen/Dataprocessing-Snakemake-Assignments#installation).
 
 
+------
 ## Usage
 To run this workflow/pipeline open a terminal with the working directory as the directory of this exercise.  
 Activate the environment by running the following command (if your environment is named differently replace `dataprocessing` with that name):
@@ -66,5 +70,6 @@ snakemake --forceall --dag | dot -Tpng > dag.png
 ```
 
 
+------
 ## Contact
 For support or any other questions, do not hesitate to contact me at v.k.talen@st.hanze.nl

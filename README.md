@@ -3,7 +3,7 @@
 
 Learning how to perform high-performance bioinformatics data analysis workflows using the snakemake tool and computer clustering.
 
-
+------
 ## About the course assignments
 The course supplies a Gitbook with theory about snakemake, analysis workflows, types of (input-)data, external scripts, scheduling and logging.
 These are supplied in the form of 5 tutorial chapters with an exercise per tutorial, so every aspect of the analysis workflow has been walked through.
@@ -16,6 +16,7 @@ The final assignment however is not located in this repository, since the chosen
 and is bound by contract, so it can not be publicly shared.
 
 
+------
 ## Repository file structure
 ```
 Dataprocessing-Snakemake-Assignments
@@ -36,6 +37,7 @@ Dataprocessing-Snakemake-Assignments
 ```
 
 
+------
 ## Installation
 This project can only be run on a Unix-like system (Linux/macOS) and not on Windows, the reason for this is that the dependency Snakemake uses some packages that are not available for Windows.
 
@@ -61,6 +63,7 @@ mamba env create
 This will name the environment `dataprocessing`, if desired it can be given another name by adding `--name your-desired-name`.
 
 
+------
 ## Usage
 To run a workflow/pipeline open a terminal with the working directory of the pipeline you want to run.  
 Activate the environment by running the following command (if your environment is named differently replace `dataprocessing` with that name):
@@ -71,14 +74,16 @@ After the environment is activated the pipeline can normally be run by simply in
 ```bash
 snakemake --cores 1
 ```
-To be sure a pipeline can be run without any other setup and for more information read the readme of that pipeline.
+To be sure a pipeline can be run without any other setup and for more information, the readme of that pipeline should be read.
 
 
+------
 ## Useful links  
 * [Course Gitbook](https://fennaf.gitbook.io/bfvh4dsp1/)  
 * [Snakemake documentation](https://snakemake.readthedocs.io/en/latest)  
 * [Conda documentation](https://docs.conda.io/projects/conda/en/latest)  
 
 
+------
 ## Contact
 For support or any other questions, do not hesitate to contact me at v.k.talen@st.hanze.nl
