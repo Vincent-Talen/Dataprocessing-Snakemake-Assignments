@@ -7,5 +7,6 @@ dependencies:
   - bwa=0.7
   - graphviz=7.1
   - python=3.11
+  - r-base=4.2
   - samtools=1.6
   - snakemake=7.22

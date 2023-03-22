@@ -1,0 +1,12 @@
+configfile: "config/config.yaml"
+
+# define data directory globally from config
+DATADIR = config["datadir"]
+
+##### include rules #####
+include: "rules/heatmap.smk"
+
+##### start-/endpoint of pipeline #####
+rule all:
+    input:
+        "results/heatmap.jpg"
