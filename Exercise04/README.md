@@ -3,7 +3,7 @@
 
 ------
 ## About this exercise
-????
+Learning how to use external scripts (python/R) in a workflow and how to create a snakemake pipeline from an already existing workflow.
 
 
 ------
@@ -18,10 +18,6 @@ Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wik
 Exercise04
 ├── config
 │   └── config.yaml
-├── results
-│   ├── A.out.vcf
-│   ├── B.out.vcf
-│   └── heatmap.jpg
 ├── workflow
 │   ├── rules
 │   │   ├── aligning.smk
