@@ -1,4 +1,6 @@
 datadir: /commons/Themas/Thema11/Dataprocessing/WC04/data/
+picard-path: /students/2022-2023/Thema11/picard/build/libs/picard.jar
 
 samples:
-  - A.txt
+  - A
+  - B

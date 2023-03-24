@@ -4,9 +4,14 @@ configfile: "config/config.yaml"
 DATADIR = config["datadir"]
 
 ##### include rules #####
+include: "rules/aligning.smk"
+include: "rules/filtering.smk"
 include: "rules/heatmap.smk"
+include: "rules/pileup.smk"
+include: "rules/sorting.smk"
 
 ##### start-/endpoint of pipeline #####
 rule all:
     input:
-        "results/heatmap.jpg"
+        heatmap_filename="results/heatmap.jpg",
+        pileup=expand("results/{sample}.out.vcf", sample=config["samples"])

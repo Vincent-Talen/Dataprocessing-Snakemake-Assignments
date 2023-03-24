@@ -18,26 +18,19 @@ Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wik
 Exercise04
 ├── config
 │   └── config.yaml
-├── resources
-│   └── *
 ├── results
-│   └── *
+│   ├── A.out.vcf
+│   ├── B.out.vcf
+│   └── heatmap.jpg
 ├── workflow
 │   ├── rules
-│   │   ├── module1.smk
-│   │   └── module2.smk
-│   ├── envs
-│   │   ├── tool1.yaml
-│   │   └── tool2.yaml
+│   │   ├── aligning.smk
+│   │   ├── filtering.smk
+│   │   ├── heatmap.smk
+│   │   ├── pileup.smk
+│   │   └── sorting.smk
 │   ├── scripts
-│   │   ├── script1.py
-│   │   └── script2.R
-│   ├── notebooks
-│   │   ├── notebook1.py.ipynb
-│   │   └── notebook2.r.ipynb
-│   ├── report
-│   │   ├── plot1.rst
-│   │   └── plot2.rst
+│   │   └── heatmap.R
 │   └── Snakefile
 ├── README.md
 └── dag.png
@@ -47,6 +40,27 @@ Exercise04
 ------
 ## Installation
 Follow general installation instructions from the [README located in the repository root](https://github.com/Vincent-Talen/Dataprocessing-Snakemake-Assignments#installation).
+
+This exercise does require additional installation steps before it can be run, since the [Picard](https://github.com/broadinstitute/picard) tool is necessary.
+
+### Gradle + OpenJDK 17
+To be able to build and use Picard, [Gradle](https://gradle.org/) and [OpenJDK](https://openjdk.org/) 17 are required.
+Make sure these are already installed on your system with the correct versions, if not follow the instructions from https://openjdk.org/install/ and https://gradle.org/install/.
+
+### Picard
+After making sure Gradle and OpenJDK 17 are installed, go to the directory Picard should be installed in.
+Run the following command to clone the Picard repository to your system and change the working directory to the cloned git directory:
+```bash
+git clone https://github.com/broadinstitute/picard.git
+cd picard/
+```
+Now the fully-packaged executable Picard jar with all its dependencies should be built using the gradlew wrapper:
+```bash
+./gradlew shadowJar
+```
+The only thing left to do is to update the `picard-path` variable in the `config/config.yaml` file to the correct path `picard.jar` is built.
+Replace `path_to_picard_directory` with the correct path to the cloned picard directory and keep the `build/libs/picard.jar` behind it.
+> picard-path: /<path_to_picard_directory>/build/libs/picard.jar
 
 
 ------
