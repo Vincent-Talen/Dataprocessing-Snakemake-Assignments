@@ -1,4 +1,6 @@
 datadir: /commons/Themas/Thema11/Dataprocessing/WC02/data/
+resultsdir: results/
+logsdir: logs/
 
 samples:
   - A

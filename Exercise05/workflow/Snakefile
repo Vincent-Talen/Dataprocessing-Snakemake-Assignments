@@ -1,19 +1,22 @@
 configfile: "config/config.yaml"
+DATADIR = config["datadir"]
+RESULTSDIR = config["resultsdir"]
+LOGSDIR = config["logsdir"]
 
 rule all:
     input:
-        "results/out.html"
+        RESULTSDIR + "out.html"
 
 rule bwa_map:
     input:
-        config["datadir"] + "genome.fa",
-        config["datadir"] + "samples/{sample}.fastq"
+        DATADIR + "genome.fa",
+        DATADIR + "samples/{sample}.fastq"
     output:
-        "results/mapped_reads/{sample}.bam"
+        RESULTSDIR + "mapped_reads/{sample}.bam"
     message:
         "executing `bwa mem | samtools view` on '{input}' to generate '{output}'"
     log:
-        "logs/bwa_map/{sample}.log"
+        LOGSDIR + "bwa_map/{sample}.log"
     shell:
         """
         (
@@ -23,13 +26,13 @@ rule bwa_map:
 
 rule samtools_sort:
     input:
-        "results/mapped_reads/{sample}.bam"
+        RESULTSDIR + "mapped_reads/{sample}.bam"
     output:
-        "results/sorted_reads/{sample}.bam"
+        RESULTSDIR + "sorted_reads/{sample}.bam"
     message:
         "executing `samtools sort` on '{input}' to generate '{output}'"
     log:
-        "logs/samtools_sort/{sample}.log"
+        LOGSDIR + "samtools_sort/{sample}.log"
     shell:
         """
         (
@@ -39,13 +42,13 @@ rule samtools_sort:
 
 rule samtools_index:
     input:
-        "results/sorted_reads/{sample}.bam"
+        RESULTSDIR + "sorted_reads/{sample}.bam"
     output:
-        "results/sorted_reads/{sample}.bam.bai"
+        RESULTSDIR + "sorted_reads/{sample}.bam.bai"
     message:
         "executing `samtools index` on '{input}' to generate '{output}'"
     log:
-        "logs/samtools_index/{sample}.log"
+        LOGSDIR + "samtools_index/{sample}.log"
     shell:
         """
         (
@@ -55,15 +58,15 @@ rule samtools_index:
 
 rule bcftools_call:
     input:
-        fa=config["datadir"] + "genome.fa",
-        bam=expand("results/sorted_reads/{sample}.bam", sample=config["samples"]),
-        bai=expand("results/sorted_reads/{sample}.bam.bai", sample=config["samples"])
+        fa=DATADIR + "genome.fa",
+        bam=expand(RESULTSDIR + "sorted_reads/{sample}.bam", sample=config["samples"]),
+        bai=expand(RESULTSDIR + "sorted_reads/{sample}.bam.bai", sample=config["samples"])
     output:
-        "results/calls/all.vcf"
+        RESULTSDIR + "calls/all.vcf"
     message:
         "executing `samtools mpileup | bcftools call` on '{input}' to generate '{output}'"
     log:
-        "logs/bcftools_call.log"
+        LOGSDIR + "bcftools_call.log"
     shell:
         """
         (
@@ -74,9 +77,9 @@ rule bcftools_call:
 
 rule report:
     input:
-        "results/calls/all.vcf"
+        RESULTSDIR + "calls/all.vcf"
     output:
-        "results/out.html"
+        RESULTSDIR + "out.html"
     message:
         "Generating report '{output}' from '{input}'"
     run:
