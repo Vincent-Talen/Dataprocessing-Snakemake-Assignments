@@ -12,8 +12,14 @@ rule bwa_map:
         "results/mapped_reads/{sample}.bam"
     message:
         "executing `bwa mem | samtools view` on '{input}' to generate '{output}'"
+    log:
+        "logs/bwa_map/{sample}.log"
     shell:
-        "bwa mem {input} | samtools view -Sb - > {output}"
+        """
+        (
+        bwa mem {input} | samtools view -Sb - > {output}
+        ) >> {log} 2>&1
+        """
 
 rule samtools_sort:
     input:
@@ -22,9 +28,14 @@ rule samtools_sort:
         "results/sorted_reads/{sample}.bam"
     message:
         "executing `samtools sort` on '{input}' to generate '{output}'"
+    log:
+        "logs/samtools_sort/{sample}.log"
     shell:
-        "samtools sort -T results/sorted_reads/{wildcards.sample} "
-        "-O bam {input} > {output}"
+        """
+        (
+        samtools sort -T results/sorted_reads/{wildcards.sample} -O bam {input} > {output}
+        ) >> {log} 2>&1
+        """
 
 rule samtools_index:
     input:
@@ -33,8 +44,14 @@ rule samtools_index:
         "results/sorted_reads/{sample}.bam.bai"
     message:
         "executing `samtools index` on '{input}' to generate '{output}'"
+    log:
+        "logs/samtools_index/{sample}.log"
     shell:
-        "samtools index {input}"
+        """
+        (
+        samtools index {input}
+        ) >> {log} 2>&1
+        """
 
 rule bcftools_call:
     input:
@@ -45,9 +62,15 @@ rule bcftools_call:
         "results/calls/all.vcf"
     message:
         "executing `samtools mpileup | bcftools call` on '{input}' to generate '{output}'"
+    log:
+        "logs/bcftools_call.log"
     shell:
-        "samtools mpileup -g -f {input.fa} {input.bam} | "
-        "bcftools call -mv - > {output}"
+        """
+        (
+        samtools mpileup -g -f {input.fa} {input.bam} | 
+        bcftools call -mv - > {output}
+        ) >> {log} 2>&1
+        """
 
 rule report:
     input:
