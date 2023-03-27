@@ -19,6 +19,8 @@ Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wik
 Exercise05
 ├── config
 │   └── config.yaml
+├── slurm
+│   └── config.yaml
 ├── workflow
 │   └── Snakefile
 ├── README.md
@@ -48,6 +50,14 @@ After the environment is activated the pipeline can be run by simply invoking sn
 snakemake -c 1
 ```
 The `-c` or `--cores` option specifies the amount of cores you want snakemake to use, when given no value it will select the system maximum.
+
+### Running pipeline over Slurm cluster
+Snakemake can run pipelines on Slurm clusters for you, to easily to this a profile has been included in this repository.
+If not run on the Hanze bioinformatics cluster the 'partition' name in `slurm/config.yaml` should be replaced.
+To run the pipeline over the slurm cluster run the following command that uses the settings from the 'slurm' profile:
+```bash
+snakemake --profile slurm
+```
 
 ### Different options for running the snakemake workflow
 * `--dry-run` or `-n`: shows what the execution plan is. Combined with `p` so it also prints the shell commands for better illustration of the plan.  

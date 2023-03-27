@@ -13,6 +13,8 @@ rule bwa_map:
         DATADIR + "samples/{sample}.fastq"
     output:
         RESULTSDIR + "mapped_reads/{sample}.bam"
+    resources:
+        mem=64000
     message:
         "executing `bwa mem | samtools view` on '{input}' to generate '{output}'"
     log:
