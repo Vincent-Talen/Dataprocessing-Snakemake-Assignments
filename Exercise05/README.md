@@ -19,8 +19,12 @@ Visualisation of the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wik
 Exercise05
 ├── config
 │   └── config.yaml
+├── logs
+│   └── *
 ├── slurm
 │   └── config.yaml
+├── slurm-logs
+│   └── *
 ├── workflow
 │   └── Snakefile
 ├── README.md

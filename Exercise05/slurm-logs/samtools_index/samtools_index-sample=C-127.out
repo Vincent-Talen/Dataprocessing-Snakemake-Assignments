@@ -1,0 +1,14 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=8000, mem_mib=7630, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Mon Mar 27 15:44:54 2023]
+Job 0: executing `samtools index` on 'results/sorted_reads/C.bam' to generate 'results/sorted_reads/C.bam.bai'
+Reason: Missing output files: results/sorted_reads/C.bam.bai
+
+[Mon Mar 27 15:44:54 2023]
+Finished job 0.
+1 of 1 steps (100%) done

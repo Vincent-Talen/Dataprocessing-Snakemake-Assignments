@@ -1,0 +1,15 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=8000, mem_mib=7630, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+
+[Mon Mar 27 15:46:23 2023]
+Job 0: Generating report 'results/out.html' from 'results/calls/all.vcf'
+Reason: Missing output files: results/out.html
+
+:: (ERROR/3) Line 27 exceeds the line-length-limit.
+[Mon Mar 27 15:46:23 2023]
+Finished job 0.
+1 of 1 steps (100%) done
