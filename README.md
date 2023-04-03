@@ -33,7 +33,8 @@ Dataprocessing-Snakemake-Assignments
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── environment.yml
+├── environment.yml
+└── project-proposal.md
 ```
 
 
